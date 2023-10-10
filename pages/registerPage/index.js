@@ -1,19 +1,13 @@
 let nameInput = document.querySelector("input[type=text]");
 let passwordInput = document.querySelector("input[type=password]");
 let form = document.querySelector("form");
-let errorMsg = document.querySelector(".error-msg");
-let errorMsg2=document.querySelector(".error-msg-2");
 let btn = document.querySelector("button");
 let userExist=false;
-localStorage.removeItem('users')
 form.addEventListener("submit", handleRegister);
 function handleRegister(e) {
   e.preventDefault();
   if (nameInput.value && passwordInput.value) {
-    errorMsg.style.display = "none";
     chekUser()
-  } else {
-    errorMsg.style.display = "block";
   }
 }
 function createDataBase() {
@@ -46,10 +40,8 @@ checkExist()
 function checkExist() {
     console.log(userExist);
     if (userExist) {
-        errorMsg2.style.display='block'
     }
     else{
-        errorMsg2.style.display='none'
         createUser()
     }
 }

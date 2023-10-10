@@ -1,18 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../../assets/css/reset.css">
-</head>
-<body>
-    <form action="">
-        <input class="name-input" type="text" placeholder="USERNAME">
-        <input class="password-input" type="password" placeholder="PASSWORD">
-        <button class="login-btn">LOGIN</button>
-        <p class="error">Please fill in all fields</p>
-    </form>
-</body>
-<script src="./index.js"></script>
+    <link rel="stylesheet" href="../../assets/css/reset.css" />
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <div class="login">
+      <div class="left">
+        <img class="logo" src="../../assets/img/Frame.png" alt="" />
+        <img
+          class="main-photo"
+          src="../../assets/img/Illustration.png"
+          alt=""
+        />
+      </div>
+      <div class="right">
+        <form action="">
+            <h1>Nice to see you again!</h1>
+          <input class="name-input" type="text" placeholder="USERNAME" />
+          <input
+            class="password-input"
+            type="password"
+            placeholder="PASSWORD"
+          />
+          <div class="form-div">
+            <a href="">Forgot password?</a>
+          </div>
+          <button class="login-btn">Sign in</button>
+          <hr>
+          <p>Don’t have an account? <a class="start-a" href="">Get Started</a></p>
+        </form>
+      </div>
+    </div>
+  </body>
+  <script src="./index.js"></script>
 </html>
