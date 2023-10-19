@@ -46,23 +46,9 @@ function checkProduct() {
     createProduct();
   }
 }
-
-
-// file reader
-let imageFile = "";
-imgInput.addEventListener("change", (event) => {
-  const image = event.target.files[0];
-  const reader = new FileReader();
-  reader.readAsDataURL(image);
-  reader.addEventListener("load", () => {
-    imageFile = reader.result;
-  });
-});
-
 function createProduct() {
   let dataBase = getDataBase();
   let product = {
-    productImg:imageFile,
     productId: idInput.value,
     productName: nameInput.value,
     productInfo: aboutInput.value,

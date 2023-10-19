@@ -58,11 +58,13 @@ imgInput.addEventListener("change", (event) => {
     imageFile = reader.result;
   });
 });
+imgInput.addEventListener('click', change)
+ const func1= ()=>{
 
+}
 function createProduct() {
   let dataBase = getDataBase();
   let product = {
-    productImg:imageFile,
     productId: idInput.value,
     productName: nameInput.value,
     productInfo: aboutInput.value,

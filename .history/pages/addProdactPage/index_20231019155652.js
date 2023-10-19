@@ -4,7 +4,7 @@ let nameInput = document.querySelector(".input-name");
 let aboutInput = document.querySelector(".input-about");
 let priceInput = document.querySelector(".input-price");
 let selectedCount = document.querySelector("select");
-let imgInput =document.querySelector('.img-input')
+let imgInput =document.querySelector('')
 let btn = document.querySelector("button");
 let productExist = false;
 form.addEventListener("submit", handleAdd);
@@ -46,23 +46,9 @@ function checkProduct() {
     createProduct();
   }
 }
-
-
-// file reader
-let imageFile = "";
-imgInput.addEventListener("change", (event) => {
-  const image = event.target.files[0];
-  const reader = new FileReader();
-  reader.readAsDataURL(image);
-  reader.addEventListener("load", () => {
-    imageFile = reader.result;
-  });
-});
-
 function createProduct() {
   let dataBase = getDataBase();
   let product = {
-    productImg:imageFile,
     productId: idInput.value,
     productName: nameInput.value,
     productInfo: aboutInput.value,

@@ -62,7 +62,7 @@ imgInput.addEventListener("change", (event) => {
 function createProduct() {
   let dataBase = getDataBase();
   let product = {
-    productImg:imageFile,
+    productImg:
     productId: idInput.value,
     productName: nameInput.value,
     productInfo: aboutInput.value,
