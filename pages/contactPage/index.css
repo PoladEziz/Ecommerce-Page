@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+.contact-page {
+  padding-top: 100px;
+  padding-left: 128px;
+  display: flex;
+  justify-content: space-between;
+}
+.contact-page form {
+  display: flex;
+  flex-direction: column;
+}
+.contact-page form h1 {
+  margin-bottom: 8px;
+  color: var(--text-color-primary, #2D2D2D);
+  font-family: Poppins;
+  font-size: 23px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 32px;
+}
+.contact-page form p {
+  margin-bottom: 40px;
+  color: var(--text-color-tertiary, #737373);
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+.contact-page form input {
+  margin-bottom: 28px;
+  padding-left: 16px;
+  width: 384px;
+  height: 48px;
+  border-radius: 8px;
+  color: var(--text-color-tertiary, #737373);
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  border: 1px solid var(--neutrals-rule, #D2D2D2);
+  background: var(--neutrals-text-field-bg, #F6F6F6);
+}
+.contact-page form .msg-input {
+  height: 128px;
+}
+.contact-page form button {
+  color: var(--text-color-secondary, #FFF);
+  text-align: center;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  width: 384px;
+  height: 48px;
+  border: none;
+  border-radius: 8px;
+  background: var(--text-color-primary, #2D2D2D);
+}
+.contact-page .right-div {
+  padding: 88px 318px 88px 64px;
+  background: #DB6B97;
+}
+.contact-page .right-div p {
+  color: var(--text-color-secondary, #FFF);
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+.contact-page .right-div .right-contact {
+  display: flex;
+  margin-bottom: 40px;
+}
+.contact-page .right-div .right-contact img {
+  width: 24px;
+  height: 24px;
+  margin-right: 24px;
+}
+.contact-page .right-div .right-contact-2 {
+  display: flex;
+}
+.contact-page .right-div .right-contact-2 img {
+  width: 24px;
+  height: 24px;
+  margin-right: 40px;
+}
+.contact-page .right-div .main-img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}/*# sourceMappingURL=index.css.map */
