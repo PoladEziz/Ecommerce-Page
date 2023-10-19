@@ -64,6 +64,23 @@
             border-radius: 8px;
             background: var(--text-color-primary, #2D2D2D);
         }
+
+        textarea {
+            resize: none;
+            margin-bottom: 28px;
+            padding: 16px;
+            width: 384px;
+            height: 128px;
+            border-radius: 8px;
+            color: var(--text-color-tertiary, #737373);
+            font-family: Poppins;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 24px;
+            border: 1px solid var(--neutrals-rule, #D2D2D2);
+            background: var(--neutrals-text-field-bg, #F6F6F6);
+        }
     }
 
     .right-div {
