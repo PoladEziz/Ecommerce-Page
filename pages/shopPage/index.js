@@ -1,9 +1,11 @@
 let ul = document.querySelector("ul");
+let h2=document.querySelector('h2')
 function getProduct() {
   let data = JSON.parse(localStorage.getItem("product"));
   console.log(data);
+  h2.innerText=` ${data.length} items`
   data.forEach((element) => {
-    console.log(element);
+    console.log(data.length);
     ul.innerHTML += `
     <li>
     <div class="image-box">
@@ -27,9 +29,9 @@ function getProduct() {
       </div>
     </div>
 
-    <h3>${element.productName}</h3>
-    <p>${element.productInfo}</p>
-    <h4>Rs. 1790</h4>
+    <h3>${element.productName} <br> #${element.productId} </h3>
+    <p>${element.productInfo} <br> ${element.productCount}</p>
+    <h4>$ ${element.productAmount}</h4>
   </li>
     `;
   });
