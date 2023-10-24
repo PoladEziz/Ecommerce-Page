@@ -23,8 +23,8 @@ function getProduct() {
           />
           <h5>4.3</h5>
         </div>
-        <button class="no-fav-btn">
-        <img class="no-fav" src="../../assets/img/no-fav.svg" alt="">
+        <button >
+          <img src="../../assets/img/no-fav.svg" alt="">
         </button>
       </div>
     </div>
@@ -34,22 +34,6 @@ function getProduct() {
     <h4>$ ${element.productAmount}</h4>
   </li>
     `;
-    let noFavBtns= document.querySelectorAll('.no-fav-btn')
-noFavBtns.forEach((element)=>{
-  element.addEventListener('click',()=>checkFav(element) )
-})
   });
 }
 getProduct();
-let fav= false
-function checkFav(button) {
-  if(fav){
-    button.querySelector('img').src='../../assets/img/no-fav.svg'
-    fav=false
-  }
-  else{
-    button.querySelector('img').src='../../assets/img/fav.svg'
-    fav=true
-  }
-  
-}

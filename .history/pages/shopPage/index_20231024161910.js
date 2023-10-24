@@ -35,21 +35,7 @@ function getProduct() {
   </li>
     `;
     let noFavBtns= document.querySelectorAll('.no-fav-btn')
-noFavBtns.forEach((element)=>{
-  element.addEventListener('click',()=>checkFav(element) )
-})
+noFavBtns.forEach
   });
 }
 getProduct();
-let fav= false
-function checkFav(button) {
-  if(fav){
-    button.querySelector('img').src='../../assets/img/no-fav.svg'
-    fav=false
-  }
-  else{
-    button.querySelector('img').src='../../assets/img/fav.svg'
-    fav=true
-  }
-  
-}

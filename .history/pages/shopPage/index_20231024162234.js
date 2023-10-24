@@ -43,6 +43,7 @@ noFavBtns.forEach((element)=>{
 getProduct();
 let fav= false
 function checkFav(button) {
+  console.log(button);
   if(fav){
     button.querySelector('img').src='../../assets/img/no-fav.svg'
     fav=false
