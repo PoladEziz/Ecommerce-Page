@@ -38,19 +38,22 @@
   .main {
     ul {
       display: grid;
-  grid-template-columns: repeat(4,1fr);
-  grid-row-gap: 50px;
-  grid-column-gap: 120px ;
+      grid-template-columns: repeat(4, 1fr);
+      grid-row-gap: 50px;
+      grid-column-gap: 120px;
+
       li {
         display: flex;
         flex-direction: column;
         gap: 16px;
-        border: 1px solid red;
+
         .image-box {
           position: relative;
+
           button {
             background: none;
           }
+
           .buttons-box {
             width: 100%;
             padding: 0 16px;
@@ -60,6 +63,7 @@
             justify-content: space-between;
           }
         }
+
         .ratigns {
           width: 55px;
           height: 24px;
@@ -70,6 +74,7 @@
           // top: 312px;
           // left: 44px;
           display: flex;
+
           h5 {
             margin-left: 4px;
             color: var(--text-color-primary, #2d2d2d);
@@ -112,6 +117,15 @@
           font-weight: 600;
           line-height: 24px;
         }
+
+        .buttons{
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        i{
+          font-size: 20px;
+        }
+      }
       }
     }
   }

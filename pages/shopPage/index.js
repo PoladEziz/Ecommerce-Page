@@ -1,11 +1,10 @@
 let ul = document.querySelector("ul");
-let h2=document.querySelector('h2')
+let h2 = document.querySelector("h2");
 function getProduct() {
   let data = JSON.parse(localStorage.getItem("product"));
-  console.log(data);
-  h2.innerText=` ${data.length} items`
+
+  h2.innerText = ` ${data.length} Items`;
   data.forEach((element) => {
-    console.log(data.length);
     ul.innerHTML += `
     <li>
     <div class="image-box">
@@ -29,11 +28,40 @@ function getProduct() {
       </div>
     </div>
 
-    <h3>${element.productName} <br> #${element.productId} </h3>
-    <p>${element.productInfo} <br> ${element.productCount}</p>
+    <h3>${element.productName} <br> # <span>${element.productId} </span>  </h3>
+    <h5>${element.productInfo} <br> <p>${element.productCount}</p></h5>
     <h4>$ ${element.productAmount}</h4>
-  </li>
-    `;
+<div class="buttons">
+<button class="add">
+  <i class="fa-solid fa-cart-shopping"></i>
+</button>
+<button class="delete">
+  <i class="fa-sharp fa-solid fa-trash"></i>
+</button>
+</div>
+   </li>
+   `;
   });
 }
 getProduct();
+// let addIcon=document.querySelector('.fa-solid fa-cart-shopping')
+
+// delete action
+let deleteBtn = document.querySelectorAll(".delete");
+deleteBtn.forEach((element)=>{
+    element.addEventListener('click',() => deleteProduct(element))
+})
+function deleteProduct(element) {
+let data=localStorage.getItem('product')
+console.log(data);
+let productId=element.parentElement.parentElement.querySelector('span').innerText
+let productCount=element.parentElement.parentElement.querySelector('h5 p')
+console.log(productCount);
+ if (productCount.innerText>1) {
+    productCount.innerText= productCount.innerText-1
+    console.log('boyukdur');
+ }
+ else{
+    element.parentElement.parentElement.remove()
+ }
+}
