@@ -22,8 +22,8 @@ function getProduct() {
           />
           <h5>4.3</h5>
         </div>
-        <button>
-          <img src="../../assets/img/no-fav.svg" alt="">
+        <button class="no-fav-btn">
+        <img class="no-fav" src="../../assets/img/no-fav.svg" alt="">
         </button>
       </div>
     </div>
