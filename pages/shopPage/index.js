@@ -48,20 +48,20 @@ getProduct();
 
 // delete action
 let deleteBtn = document.querySelectorAll(".delete");
-deleteBtn.forEach((element)=>{
-    element.addEventListener('click',() => deleteProduct(element))
-})
+deleteBtn.forEach((element) => {
+  element.addEventListener("click", () => deleteProduct(element));
+});
 function deleteProduct(element) {
-let data=localStorage.getItem('product')
-console.log(data);
-let productId=element.parentElement.parentElement.querySelector('span').innerText
-let productCount=element.parentElement.parentElement.querySelector('h5 p')
-console.log(productCount);
- if (productCount.innerText>1) {
-    productCount.innerText= productCount.innerText-1
-    console.log('boyukdur');
- }
- else{
-    element.parentElement.parentElement.remove()
- }
+  let data = localStorage.getItem("product");
+  console.log(data);
+  let productId =
+    element.parentElement.parentElement.querySelector("span").innerText;
+  let productCount = element.parentElement.parentElement.querySelector("h5 p");
+  console.log(productCount);
+  if (productCount.innerText > 1) {
+    productCount.innerText = productCount.innerText - 1;
+
+  } else {
+    element.parentElement.parentElement.remove();
+  }
 }
