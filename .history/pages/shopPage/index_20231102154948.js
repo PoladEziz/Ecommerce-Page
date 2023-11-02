@@ -66,7 +66,6 @@ function deleteProduct(element) {
   }
 }
 
-// delete from localStorage
 function editLocalStorage(id, data) {
   data.forEach((element) => {
     if (element.productId == id) {

@@ -46,7 +46,7 @@ function getProduct() {
 getProduct();
 // let addIcon=document.querySelector('.fa-solid fa-cart-shopping')
 
-// delete action from UI
+// delete action
 let deleteBtn = document.querySelectorAll(".delete");
 deleteBtn.forEach((element) => {
   element.addEventListener("click", () => deleteProduct(element));
@@ -59,26 +59,18 @@ function deleteProduct(element) {
 
   if (productCount.innerText > 1) {
     productCount.innerText = productCount.innerText - 1;
-    editLocalStorage(productId, data);
+    removeLocalStorage(productId, data);
   } else {
     element.parentElement.parentElement.remove();
-    removeLocalStorage(productId, data);
   }
 }
 
-// delete from localStorage
-function editLocalStorage(id, data) {
-  data.forEach((element) => {
+function removeLocalStorage(id, data) {
+    data.forEach((element) => {
     if (element.productId == id) {
       element.productCount--;
       localStorage.setItem("product", JSON.stringify(data));
+
     }
   });
-}
-
-function removeLocalStorage(id, data) {
-  let newArr = data.filter((object) => {
-    return object.productId != id;
-  });
-  localStorage.setItem("product", JSON.stringify(newArr));
 }
