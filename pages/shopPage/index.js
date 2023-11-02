@@ -60,8 +60,8 @@ function deleteProduct(element) {
   console.log(productCount);
   if (productCount.innerText > 1) {
     productCount.innerText = productCount.innerText - 1;
-
-  } else {
+  }
+  else {
     element.parentElement.parentElement.remove();
   }
 }
