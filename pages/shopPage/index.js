@@ -96,3 +96,6 @@ function removeLocalStorage(id, data) {
   localStorage.setItem("product", JSON.stringify(newArr));
 }
 
+// counter action
+let decrease=document.querySelector('.decrease')
+let result=document
