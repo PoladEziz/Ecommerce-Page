@@ -44,8 +44,21 @@ function getProduct() {
   });
 }
 getProduct();
-// let addIcon=document.querySelector('.fa-solid fa-cart-shopping')
-
+// fav action
+let fav = false;
+let noFavBtn = document.querySelectorAll(".no-fav-btn");
+noFavBtn.forEach((element) => {
+  element.addEventListener("click", () => checkFav(element));
+});
+function checkFav(element) {
+  if (fav) {
+    element.querySelector("img").src = "../../assets/img/no-fav.svg";
+    fav = false;
+  } else {
+    element.querySelector("img").src = "../../assets/img/fav.svg";
+    fav = true;
+  }
+}
 // delete action
 let deleteBtn = document.querySelectorAll(".delete");
 deleteBtn.forEach((element) => {
@@ -60,8 +73,23 @@ function deleteProduct(element) {
   console.log(productCount);
   if (productCount.innerText > 1) {
     productCount.innerText = productCount.innerText - 1;
-  }
-  else {
+  } else {
     element.parentElement.parentElement.remove();
   }
+}
+// add action
+let addBtn = document.querySelectorAll(".add");
+addBtn.forEach((element) => {});
+
+// counter function
+let decrease = document.querySelector(".decrease");
+let result = document.querySelector(".counter");
+let increase = document.querySelector(".increase");
+increase.addEventListener("click", increaseFunction);
+function increaseFunction() {
+  result.innerText = +result.innerText + 1;
+}
+decrease.addEventListener("click", decreaseFunction);
+function decreaseFunction() {
+  result.innerText = +result.innerText - 1;
 }
