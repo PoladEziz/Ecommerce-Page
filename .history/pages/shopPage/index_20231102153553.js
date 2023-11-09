@@ -44,55 +44,22 @@ function getProduct() {
   });
 }
 getProduct();
-// fav action
-let fav = false;
-let noFavBtn = document.querySelectorAll(".no-fav-btn");
-noFavBtn.forEach((element) => {
-  element.addEventListener("click", () => checkFav(element));
-});
-function checkFav(element) {
-  if (fav) {
-    element.querySelector("img").src = "../../assets/img/no-fav.svg";
-    fav = false;
-  } else {
-    element.querySelector("img").src = "../../assets/img/fav.svg";
-    fav = true;
-  }
-}
+// let addIcon=document.querySelector('.fa-solid fa-cart-shopping')
+
 // delete action
 let deleteBtn = document.querySelectorAll(".delete");
 deleteBtn.forEach((element) => {
   element.addEventListener("click", () => deleteProduct(element));
 });
 function deleteProduct(element) {
-  let data = JSON.parse(localStorage.getItem("product"));
+  let data = localStorage.getItem("product");
   let productId =
     element.parentElement.parentElement.querySelector("span").innerText;
   let productCount = element.parentElement.parentElement.querySelector("h5 p");
-
+  console.log(productCount);
   if (productCount.innerText > 1) {
     productCount.innerText = productCount.innerText - 1;
-    editLocalStorage(productId, data);
   } else {
     element.parentElement.parentElement.remove();
-    removeLocalStorage(productId, data);
   }
 }
-
-// delete from localStorage
-function editLocalStorage(id, data) {
-  data.forEach((element) => {
-    if (element.productId == id) {
-      element.productCount--;
-      localStorage.setItem("product", JSON.stringify(data));
-    }
-  });
-}
-
-function removeLocalStorage(id, data) {
-  let newArr = data.filter((object) => {
-    return object.productId != id;
-  });
-  localStorage.setItem("product", JSON.stringify(newArr));
-}
-
