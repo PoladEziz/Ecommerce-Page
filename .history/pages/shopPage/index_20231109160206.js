@@ -96,32 +96,20 @@ function removeLocalStorage(id, data) {
   localStorage.setItem("product", JSON.stringify(newArr));
 }
 
-// add to basket
-let addBtns = document.querySelectorAll(".add");
-let basketCount = document.querySelector(".number-p");
-let totalPrice = document.querySelector(".total-price");
-let basketUl = document.querySelector(".basket-ul");
-addBtns.forEach((element) => {
-  element.addEventListener("click", () => addBasket(element));
-});
 
-function addBasket(event) {
-  let productName = event.parentElement.parentElement.querySelector("h3");
-  let productPrice = event.parentElement.parentElement.querySelector("h4 span");
-  let productImg = event.parentElement.parentElement.querySelector("img").src;
-  basketCount.innerText = +basketCount.innerText + 1;
-  totalPrice.innerText = +totalPrice.innerText + Number(productPrice.innerText);
+
+// add to basket
+let addBtns=document.querySelectorAll('.add')
+let basketCount= document.querySelector('.number-p')
+let totalPrice=document.querySelector('.total-price')
+addBtns.forEach((element)=>{
+  element.addEventListener('click', ()=>addBasket(element))
+})
+
+function addBasket(event){
+  let productName= event.parentElement.parentElement.querySelector('h3')
+  let productPrice= event.parentElement.parentElement.querySelector('h4 span')
+  let productImg= event.parentElement.parentElement.querySelector('img').src
   console.log(productImg);
-  basketUl.innerHTML += `
-<li>
-<img src="${productImg}" alt="" />
-<h1>${productName.innerText}</h1>
-<h4> $ ${productPrice.innerText}</h4>
-<div class="counter-div">
-  <button class="decrease">-</button>
-  <h1 class="counter">0</h1>
-  <button class="increase">+</button>
-</div>
-</li>
-`;
+
 }
