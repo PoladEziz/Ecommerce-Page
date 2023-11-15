@@ -116,6 +116,8 @@ function addBasket(event) {
   let basketLists = basketUl.querySelectorAll("li");
 
   for (let index = 0; index < basketLists.length; index++) {
+    console.log(basketLists[index].querySelector("h1").innerText);
+    console.log(productName.innerText);
     if (
       productId.innerText == basketLists[index].querySelector("h2").innerText
     ) {

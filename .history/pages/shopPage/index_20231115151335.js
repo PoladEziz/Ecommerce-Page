@@ -114,17 +114,21 @@ function addBasket(event) {
   totalPrice.innerText = +totalPrice.innerText + Number(productPrice.innerText);
   let productExist=false
   let basketLists = basketUl.querySelectorAll("li");
-
+  console.log(basketLists);
   for (let index = 0; index < basketLists.length; index++) {
+    console.log(basketLists[index].querySelector("h1").innerText);
+    console.log(productName.innerText);
     if (
       productId.innerText == basketLists[index].querySelector("h2").innerText
     ) {
       basketLists[index].querySelector(".counter").innerText =
         +basketLists[index].querySelector(".counter").innerText + 1;
         productExist=true
+  
       break;
     } else {
       productExist=false
+      console.log('yoxdur');
     
     }
   }

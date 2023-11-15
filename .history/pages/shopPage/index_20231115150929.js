@@ -114,34 +114,34 @@ function addBasket(event) {
   totalPrice.innerText = +totalPrice.innerText + Number(productPrice.innerText);
   let productExist=false
   let basketLists = basketUl.querySelectorAll("li");
-
+  console.log(basketLists);
   for (let index = 0; index < basketLists.length; index++) {
+    console.log(basketLists[index].querySelector("h1").innerText);
     if (
-      productId.innerText == basketLists[index].querySelector("h2").innerText
+      productName.innerText == basketLists[index].querySelector("h1").innerText
     ) {
       basketLists[index].querySelector(".counter").innerText =
         +basketLists[index].querySelector(".counter").innerText + 1;
         productExist=true
+        console.log(basketLists[index]);
+        console.log('var');
       break;
     } else {
       productExist=false
+      console.log('yoxdur');
     
     }
   }
-  if (!productExist) {
-    basketUl.innerHTML += `
-    <li>
-    <img src="${productImg}" alt="" />
-    <h1>${productName.innerText}</h1>
-    <h2>${productId.innerText}</h2>
-    <h4> $ ${productPrice.innerText}</h4>
-    <div class="counter-div">
-      <button class="decrease">-</button>
-      <h1 class="counter">1</h1>
-      <button class="increase">+</button>
-    </div>
-    </li>
-    `;
-  }
-
+  basketUl.innerHTML += `
+      <li>
+      <img src="${productImg}" alt="" />
+      <h1>${productName.innerText}</h1>
+      <h4> $ ${productPrice.innerText}</h4>
+      <div class="counter-div">
+        <button class="decrease">-</button>
+        <h1 class="counter">1</h1>
+        <button class="increase">+</button>
+      </div>
+      </li>
+      `;
 }
